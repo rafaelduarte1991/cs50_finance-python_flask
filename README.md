@@ -4,7 +4,7 @@ The exercise is part of the CS50 program.
 
 The application uses python flaska and SQLite as local database.
 
-##run the application
+## run the application
 
 open the terminal and run:
 
