@@ -1,0 +1,13 @@
+sqlite> .schema                                                                        
+CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, username TEXT NOT NULL, hash TEXT NOT NULL, cash NUMERIC NOT NULL DEFAULT 10000.00);
+CREATE TABLE sqlite_sequence(name,seq);
+CREATE UNIQUE INDEX username ON users (username);
+CREATE TABLE history (id INTEGER PRIMARY KEY AUTOINCREMENT, type TEXT NOT NULL, user_id INTEGER NOT NULL, symbol TEXT NOT NULL, shares INTEGER NOT NULL, price NUMERIC NOT NULL, timestamp DATETIME DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY(user_id) REFERENCES users(id));
+
+
+DELETE FROM users WHERE id = 1;
+
+Quando quiser deletar os users, ai o banco fica novinho
+Só testar ver se cumpre as regras amanha e deu
+
+acho que formatar a data tambem

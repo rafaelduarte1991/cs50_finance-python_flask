@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post">
+        <h2>Registration</h2>
+        <div class="mb-3">
+            <p>Username</p>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="mb-3">
+            <p>Password</p>
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+            <p id="rules" style="display: none; color: crimson; font-size: 10px; padding-top: 5px;">Must contain at least 5 characters, including letters and numbers.</p>
+        </div>
+        <div class="mb-3">
+            <p>Confirm password</p>
+            <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <h3>Portfolio</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Ticker</th>
+          <th>Name</th>
+          <th>Shares</th>
+          <th>Price</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for stock in stocks %}
+          <tr>
+            <td>{{stock.symbol}}</td>
+            <td>{{stock.name}}</td>
+            <td>{{stock.shares_quantity}}</td>
+            <td>{{stock.price | usd}}</td>
+            <td>{{(stock.price * stock.shares_quantity) | usd}}</td>
+          </tr>
+        {% endfor %}
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><b>Cash</b></td>
+          <td>{{cash | usd}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><b>Assets (Total)</b></td>
+            <td>{{total_assets | usd}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <form action="/" method="post">
+      <div class="mb-3">
+          <input class="form-control mx-auto w-auto" id="cash" name="cash" placeholder="Cash" type="number">
+      </div>
+      <button class="btn btn-primary" type="submit">Add Cash</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+  <h2>Buy shares</h2>
+    <form action="{{url_for('buy')}}" method="post">
+      <label class="col" for="symbol"><b>Ticker:</b></label>
+      <input autocomplete="off" autofocus class="col m-3" id="symbol" name="symbol" placeholder="Symbol" type="text">
+      <label for="shares"><b>Nº Shares:</b></label>
+      <input autocomplete="off" autofocus class="col m-3" id="shares" name="shares" placeholder="Shares" type="text">
+      <button class="btn btn-dark col" type="submit">Buy</button>
+    </form>
+{% endblock %}
