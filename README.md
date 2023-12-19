@@ -2,7 +2,7 @@
 It is an application in which the user can simulate buying and selling stocks.
 The exercise is part of the CS50 program.
 
-The application uses python flaska and SQLite as local database.
+The application uses python flask and SQLite as local database.
 
 ## run the application
 
